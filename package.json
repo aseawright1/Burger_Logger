@@ -1,0 +1,24 @@
+{
+  "name": "11.burger_logger",
+  "version": "1.0.0",
+  "description": "Track which types of burgers you'd like to eat, and which you've already eaten!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aseawright1/11.Burger_Logger.git"
+  },
+  "author": "Alek Seawright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aseawright1/11.Burger_Logger/issues"
+  },
+  "homepage": "https://github.com/aseawright1/11.Burger_Logger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.2",
+    "mysql": "^2.18.1"
+  }
+}
