@@ -13,7 +13,7 @@ $(function() {
         })
     })
 
-    $('.change-burger').on('submit', function(event) {
+    $('.change-burger').on('click', function(event) {
         const id = $(this).data('id')
         const devouredBurger = $(this).data('newDevoured')
         const newDevCond = { devoured: devouredBurger}
@@ -23,8 +23,8 @@ $(function() {
             type: 'PUT',
             data: newDevCond
         }).then(function() {
-            console.log('Devoured is now ', devouredBurger)
-            location.reload
+            console.log('Newly devoured: ', devouredBurger)
+            location.reload()
         })
     })
 })
