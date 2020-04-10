@@ -2,4 +2,41 @@
     <div class="jumbotron">
         <h1>Burger Logger</h1>
     </div>
+    
+    <div class="row">
+
+        {{!-- left column burgers to eat --}}
+        <div class="col-sm-4">
+            <h2>Edible Burgers</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        {{> burger-change devoured=true}}
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        {{!-- middle column create burger --}}
+        <div class="col-sm-4">
+            <h2>Burger of Choice</h2>
+            <div class="form-group">
+                <label for='newburger'> Type of burger</label>
+                <input type='text' id='newburger' name='burger'>
+            </div>
+            <button type='submit'>Create burger</button>
+        </div>
+
+        {{!-- right column burgers eaten--}}
+        <div class="col-sm-4">
+            <h2>Devoured Burgers</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#if eaten}}
+                        {{> burger-change devoured=false}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 </div>
