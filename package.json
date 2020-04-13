@@ -4,7 +4,9 @@
   "description": "Track which types of burgers you'd like to eat, and which you've already eaten!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flimflam": "echo 'whose the flim floam man now'",
+    "watch": "npx nodemon server.js"
   },
   "repository": {
     "type": "git",

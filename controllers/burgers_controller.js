@@ -8,8 +8,8 @@ router.post('/api/burgers', (req, res) => {
     burger.insertOne(
         ['burger_name', 'devoured'],
         [req.body.burger_name, req.body.devoured],
-        (res) => {
-            res.json({ id: SpeechRecognitionResult.insertId })
+        (result) => {
+            res.json({ id: result.insertId })
         }
     )
 })
@@ -27,12 +27,12 @@ router.get('/', (req,res) => {
 router.put('/api/burgers/:id', (req, res) => {
     var condition = `id = ${req.params.id}`
     console.log('condition', condition)
-
-    burger.updateOne({ devoured: req.body.devoured }, condition, (res) => {
-        if (res.changedRows === 0) {
+    console.log(req.body)
+    burger.updateOne({ devoured: req.body.devoured }, condition, (result) => {
+        if (result.changedRows === 0) {
             return res.status(404).end()
         } else { res.status(200).end }
-    })
+    })    
 })
 
 // delete (necessary?)

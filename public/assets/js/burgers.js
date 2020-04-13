@@ -1,7 +1,9 @@
 $(function() {
-    $('.create-form').on('submit', function(event) {
+    $('#createburger').on('click', function(event) {
+        console.log("AHHHHHH!")
         event.preventDefault()
-        const newBurger = { burger_name: $('#burger').val().trim(), devoured: false }
+        const newBurger = { burger_name: $('#newburger').val().trim(), devoured: 0 }
+        console.log(newBurger)
 
         //POST
         $.ajax('/api/burgers', {
@@ -15,7 +17,7 @@ $(function() {
 
     $('.change-burger').on('click', function(event) {
         const id = $(this).data('id')
-        const devouredBurger = $(this).data('newDevoured')
+        const devouredBurger = $(this).data('newdevoured')
         const newDevCond = { devoured: devouredBurger}
 
         //PUT

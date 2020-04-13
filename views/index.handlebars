@@ -21,10 +21,10 @@
         <div class="col-sm-4">
             <h2>Burger of Choice</h2>
             <div class="form-group">
-                <label for='newburger'> Type of burger</label>
+                <label for='newburger'>Type of burger</label>
                 <input type='text' id='newburger' name='burger'>
             </div>
-            <button type='submit'>Create burger</button>
+            <button type='submit' id='createburger'>Create burger</button>
         </div>
 
         {{!-- right column burgers eaten--}}
@@ -32,7 +32,7 @@
             <h2>Devoured Burgers</h2>
             <ul>
                 {{#each burgers}}
-                    {{#if eaten}}
+                    {{#if devoured}}
                         {{> burger-change devoured=false}}
                     {{/if}}
                 {{/each}}
