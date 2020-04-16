@@ -19,11 +19,18 @@ $(function() {
         const newDevCond = { devoured: devouredBurger}
 
         //PUT
-        $.ajax('/api/burgers/' + id, {
+        $.ajax(`/api/burgers/${id}`, {
             type: 'PUT',
             data: newDevCond
-        }).then(function() {
-            location.reload()
-        })
+        }).then(location.reload())
+    })
+
+    $('.delete-burger').on('click', function(event) {
+        var id = $(this).data('id')
+
+        //DELETE
+        $.ajax(`/api/burgers/${id}`, {
+            type: 'DELETE'
+        }).then(location.reload())
     })
 })

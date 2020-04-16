@@ -67,6 +67,19 @@ var orm = {
             if (err) throw err
             cb(res)
         })
+    },
+    // delete entries in table
+    deleteOne(table, condition, cb) {
+        let queryString = `DELETE FROM ${table}`
+        queryString += ' WHERE '
+        queryString += condition
+
+        console.log(queryString)
+
+        connection.query(queryString, (err, res) => {
+            if (err) throw err
+            cb(res)
+        })
     }
 }
 
