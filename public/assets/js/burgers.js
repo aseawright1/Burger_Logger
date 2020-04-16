@@ -1,7 +1,5 @@
 $(function() {
     $('#createburger').on('click', function(event) {
-        console.log("AHHHHHH!")
-        event.preventDefault()
         const newBurger = { burger_name: $('#newburger').val().trim(), devoured: 0 }
         console.log(newBurger)
 
@@ -10,7 +8,7 @@ $(function() {
             type: 'POST',
             data: newBurger
         }).then(function() {
-            console.log('New burger added')
+            //reload to update page
             location.reload()
         })
     })
@@ -25,7 +23,6 @@ $(function() {
             type: 'PUT',
             data: newDevCond
         }).then(function() {
-            console.log('Newly devoured: ', devouredBurger)
             location.reload()
         })
     })

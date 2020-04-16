@@ -18,7 +18,7 @@ router.post('/api/burgers', (req, res) => {
 router.get('/', (req,res) => {
     burger.selectAll((data) => {
         var hbsObject = { burgers: data }
-        console.log(hbsObject)
+        // console.log(hbsObject)
         res.render('index', hbsObject)
     })
 })
@@ -26,8 +26,8 @@ router.get('/', (req,res) => {
 // update (put)
 router.put('/api/burgers/:id', (req, res) => {
     var condition = `id = ${req.params.id}`
-    console.log('condition', condition)
-    console.log(req.body)
+    // console.log('condition', condition)
+    // console.log(req.body)
     burger.updateOne({ devoured: req.body.devoured }, condition, (result) => {
         if (result.changedRows === 0) {
             return res.status(404).end()
